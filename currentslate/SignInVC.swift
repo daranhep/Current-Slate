@@ -10,19 +10,19 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: LoginTextField!
+    @IBOutlet weak var passwordTextField: LoginTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func loginBtnPressed(sender: AnyObject) {
         

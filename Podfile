@@ -8,5 +8,6 @@ target 'currentslate' do
   # Pods for currentslate
 	pod 'Firebase'
 	pod ‘Firebase/Auth’
+	pod 'Material', '~> 1.41'
 
 end
