@@ -12,14 +12,16 @@ import FBSDKLoginKit
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var emailTextField: LoginTextField!
-    @IBOutlet weak var passwordTextField: LoginTextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -105,6 +107,17 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.nextField != nil {
+            textField.nextField?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
     }
 
 

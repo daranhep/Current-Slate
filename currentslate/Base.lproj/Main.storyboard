@@ -64,27 +64,31 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tLQ-g9-oNl">
                                 <rect key="frame" x="35" y="253" width="530" height="100"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yrO-b3-Zte" customClass="LoginTextField" customModule="currentslate" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yrO-b3-Zte" customClass="LoginTextField" customModule="currentslate">
                                         <rect key="frame" x="0.0" y="0.0" width="530" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="530" id="AiY-Ui-tKd"/>
                                             <constraint firstAttribute="height" constant="35" id="juZ-bK-aBj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="aYZ-dY-TB4"/>
+                                            <outlet property="nextField" destination="AZW-T6-jwu" id="MDx-2T-DOP"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZW-T6-jwu" customClass="LoginTextField" customModule="currentslate" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZW-T6-jwu" customClass="LoginTextField" customModule="currentslate">
                                         <rect key="frame" x="0.0" y="65" width="530" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="530" id="Nxd-k3-Qfs"/>
                                             <constraint firstAttribute="height" constant="35" id="YOQ-Ex-gLZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,6 +96,10 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableVisibilityIconButton" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="uvy-og-1ay"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="gGI-Ns-jLM"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <variation key="widthClass=compact" misplaced="YES">
@@ -203,8 +211,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="yrO-b3-Zte" id="ZHP-QN-9Bb"/>
-                        <outlet property="passwordTextField" destination="AZW-T6-jwu" id="guX-hT-EPo"/>
+                        <outlet property="emailTextField" destination="yrO-b3-Zte" id="5jn-t3-vMm"/>
+                        <outlet property="passwordTextField" destination="AZW-T6-jwu" id="3pl-pS-wue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
