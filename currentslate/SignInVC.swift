@@ -14,11 +14,17 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: LoginTextField!
     @IBOutlet weak var passwordTextField: LoginTextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         
         
     }
@@ -30,21 +36,27 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             
             FIRAuth.auth()?.signInWithEmail(email, password: pwd, completion: { (user, error) in
                 if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    print("You are in")
                     
-                    if let user = FIRAuth.auth()?.currentUser {
-                        self.signedIn(user)
-                    } else {
-                        //error desc here
+                    print(error)
+                    
+                    if error.code == ERROR_USER_NOT_FOUND {
+                        self.showErrorAlert("Email account does not exist", msg: "Please enter a valid email")
                     }
                     
+                    if error.code == ERROR_INVALID_EMAIL {
+                        self.showErrorAlert("Please enter a valid email address", msg: "Thanks")
+                    }
+                    
+                } else {
+                    print("You are in")
+                    if let user = FIRAuth.auth()?.currentUser {
+                        self.signedIn(user)
+                    }
                 }
             })
             
         } else {
-            print("login failed")
+            self.showErrorAlert("Email and Password Required", msg: "You must enter an email and password")
         }
         
     }
@@ -86,6 +98,13 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     func signedIn(user: FIRUser) {
         
         
+    }
+    
+    func showErrorAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
     }
 
 
