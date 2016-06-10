@@ -23,6 +23,8 @@
 		E050DF631D09F5F60049D60C /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DF621D09F5F60049D60C /* VCExtensions.swift */; };
 		E05A9F5C1D023F4A004744CC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9F5B1D023F4A004744CC /* LoginButton.swift */; };
 		E05A9F601D024408004744CC /* RaisedButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9F5F1D024408004744CC /* RaisedButtonLogin.swift */; };
+		E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F42BD01D0B3B9B0056461A /* LoginView.swift */; };
+		E0F42BD51D0B517E0056461A /* FooterLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F42BD41D0B517E0056461A /* FooterLoginView.swift */; };
 		EF73F9557CBBDE85B6DAFA8F /* Pods_currentslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F85BD418BD4B46EE3F1C23 /* Pods_currentslate.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		E050DF621D09F5F60049D60C /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E05A9F5B1D023F4A004744CC /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		E05A9F5F1D024408004744CC /* RaisedButtonLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedButtonLogin.swift; sourceTree = "<group>"; };
+		E0F42BD01D0B3B9B0056461A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E0F42BD41D0B517E0056461A /* FooterLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterLoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				E012D0301D021AAB0079717F /* LoginTextField.swift */,
 				E05A9F5B1D023F4A004744CC /* LoginButton.swift */,
 				E05A9F5F1D024408004744CC /* RaisedButtonLogin.swift */,
+				E0F42BD01D0B3B9B0056461A /* LoginView.swift */,
+				E0F42BD41D0B517E0056461A /* FooterLoginView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,7 +308,9 @@
 				E05A9F5C1D023F4A004744CC /* LoginButton.swift in Sources */,
 				E012D02D1D01E5E00079717F /* RegisterVC.swift in Sources */,
 				E012D0311D021AAB0079717F /* LoginTextField.swift in Sources */,
+				E0F42BD51D0B517E0056461A /* FooterLoginView.swift in Sources */,
 				E01EC5631D0119B4009975D2 /* SignInVC.swift in Sources */,
+				E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */,
 				E01EC5611D0119B4009975D2 /* AppDelegate.swift in Sources */,
 				E050DF611D09EE140049D60C /* Constants.swift in Sources */,
 			);
