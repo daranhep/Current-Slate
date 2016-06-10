@@ -97,7 +97,6 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableVisibilityIconButton" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="uvy-og-1ay"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="gGI-Ns-jLM"/>
                                         </connections>
                                     </textField>
@@ -281,6 +280,9 @@
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fbLoginBtnPushed:" destination="Mo0-Zo-cqZ" eventType="touchUpInside" id="pq7-gh-wIL"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrA-gm-Sov">
                                 <rect key="frame" x="0.0" y="555" width="600" height="45"/>
@@ -564,6 +566,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kPX-25-n5q"/>
+        <segue reference="VaK-3p-UrE"/>
     </inferredMetricsTieBreakers>
 </document>
