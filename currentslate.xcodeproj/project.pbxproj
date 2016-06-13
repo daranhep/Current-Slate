@@ -156,16 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				E01EC5601D0119B4009975D2 /* AppDelegate.swift */,
-				E01EC5621D0119B4009975D2 /* SignInVC.swift */,
-				E012D0291D01E5A00079717F /* RegisterOptionsVC.swift */,
-				E012D02C1D01E5E00079717F /* RegisterVC.swift */,
-				E0D5F2E21D0F01F800EEE0C2 /* MainVC.swift */,
-				E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */,
-				E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */,
-				E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */,
-				E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */,
-				E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */,
-				E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */,
+				E0D5F2F01D0F03A800EEE0C2 /* Login */,
+				E0D5F2F11D0F03BD00EEE0C2 /* Main Application */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -196,6 +188,30 @@
 				E01791E41D0A118C00BD7A87 /* TextFieldExtension.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		E0D5F2F01D0F03A800EEE0C2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E01EC5621D0119B4009975D2 /* SignInVC.swift */,
+				E012D0291D01E5A00079717F /* RegisterOptionsVC.swift */,
+				E012D02C1D01E5E00079717F /* RegisterVC.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E0D5F2F11D0F03BD00EEE0C2 /* Main Application */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F2E21D0F01F800EEE0C2 /* MainVC.swift */,
+				E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */,
+				E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */,
+				E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */,
+				E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */,
+				E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */,
+				E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */,
+			);
+			name = "Main Application";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

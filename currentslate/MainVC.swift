@@ -10,26 +10,44 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let cameraVC : CameraVC = CameraVC(nibName: "CameraVC", bundle: nil)
+        let feedVC : FeedVC = FeedVC(nibName: "FeedVC", bundle: nil)
+        let discoverVC : DiscoverVC = DiscoverVC(nibName: "DiscoverVC", bundle: nil)
+        
+        
+        //Adding Child View Controllers
+        
+        self.addChildViewController(feedVC)
+        self.scrollView.addSubview(feedVC.view)
+        feedVC.didMoveToParentViewController(self)
+        
+        self.addChildViewController(cameraVC)
+        self.scrollView.addSubview(cameraVC.view)
+        cameraVC.didMoveToParentViewController(self)
+        
+        self.addChildViewController(discoverVC)
+        self.scrollView.addSubview(discoverVC.view)
+        discoverVC.didMoveToParentViewController(self)
+        
+        
+        //Setting up the frame
+        var cameraVCFrame : CGRect = cameraVC.view.frame
+        cameraVCFrame.origin.x = self.view.frame.width
+        cameraVC.view.frame = cameraVCFrame
+        
+        var discoverVCFrame : CGRect = discoverVC.view.frame
+        discoverVCFrame.origin.x =  2 *  self.view.frame.width
+        discoverVC.view.frame = discoverVCFrame
 
-        // Do any additional setup after loading the view.
+        self.scrollView.contentSize = CGSizeMake(self.view.frame.width * 3, self.view.frame.size.height)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+   }
