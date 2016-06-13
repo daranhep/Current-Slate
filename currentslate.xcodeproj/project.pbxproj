@@ -23,6 +23,13 @@
 		E050DF631D09F5F60049D60C /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DF621D09F5F60049D60C /* VCExtensions.swift */; };
 		E05A9F5C1D023F4A004744CC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9F5B1D023F4A004744CC /* LoginButton.swift */; };
 		E05A9F601D024408004744CC /* RaisedButtonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9F5F1D024408004744CC /* RaisedButtonLogin.swift */; };
+		E0D5F2E31D0F01F800EEE0C2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F2E21D0F01F800EEE0C2 /* MainVC.swift */; };
+		E0D5F2E61D0F02D100EEE0C2 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */; };
+		E0D5F2E71D0F02D100EEE0C2 /* FeedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */; };
+		E0D5F2EA1D0F02F100EEE0C2 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */; };
+		E0D5F2EB1D0F02F100EEE0C2 /* CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */; };
+		E0D5F2EE1D0F030300EEE0C2 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */; };
+		E0D5F2EF1D0F030300EEE0C2 /* DiscoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */; };
 		E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F42BD01D0B3B9B0056461A /* LoginView.swift */; };
 		E0F42BD51D0B517E0056461A /* FooterLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F42BD41D0B517E0056461A /* FooterLoginView.swift */; };
 		EF73F9557CBBDE85B6DAFA8F /* Pods_currentslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F85BD418BD4B46EE3F1C23 /* Pods_currentslate.framework */; };
@@ -50,6 +57,13 @@
 		E050DF621D09F5F60049D60C /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E05A9F5B1D023F4A004744CC /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		E05A9F5F1D024408004744CC /* RaisedButtonLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedButtonLogin.swift; sourceTree = "<group>"; };
+		E0D5F2E21D0F01F800EEE0C2 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedVC.xib; sourceTree = "<group>"; };
+		E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraVC.xib; sourceTree = "<group>"; };
+		E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
+		E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverVC.xib; sourceTree = "<group>"; };
 		E0F42BD01D0B3B9B0056461A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E0F42BD41D0B517E0056461A /* FooterLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterLoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +159,13 @@
 				E01EC5621D0119B4009975D2 /* SignInVC.swift */,
 				E012D0291D01E5A00079717F /* RegisterOptionsVC.swift */,
 				E012D02C1D01E5E00079717F /* RegisterVC.swift */,
+				E0D5F2E21D0F01F800EEE0C2 /* MainVC.swift */,
+				E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */,
+				E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */,
+				E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */,
+				E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */,
+				E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */,
+				E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -240,9 +261,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E01EC56B1D0119B4009975D2 /* LaunchScreen.storyboard in Resources */,
+				E0D5F2EB1D0F02F100EEE0C2 /* CameraVC.xib in Resources */,
+				E0D5F2E71D0F02D100EEE0C2 /* FeedVC.xib in Resources */,
 				E012D0281D011EFD0079717F /* GoogleService-Info.plist in Resources */,
 				E01EC5681D0119B4009975D2 /* Assets.xcassets in Resources */,
 				E01EC5661D0119B4009975D2 /* Main.storyboard in Resources */,
+				E0D5F2EF1D0F030300EEE0C2 /* DiscoverVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,15 +328,19 @@
 				E012D02A1D01E5A00079717F /* RegisterOptionsVC.swift in Sources */,
 				E05A9F601D024408004744CC /* RaisedButtonLogin.swift in Sources */,
 				E050DF631D09F5F60049D60C /* VCExtensions.swift in Sources */,
+				E0D5F2EE1D0F030300EEE0C2 /* DiscoverVC.swift in Sources */,
 				E01791E51D0A118C00BD7A87 /* TextFieldExtension.swift in Sources */,
 				E05A9F5C1D023F4A004744CC /* LoginButton.swift in Sources */,
 				E012D02D1D01E5E00079717F /* RegisterVC.swift in Sources */,
 				E012D0311D021AAB0079717F /* LoginTextField.swift in Sources */,
+				E0D5F2EA1D0F02F100EEE0C2 /* CameraVC.swift in Sources */,
 				E0F42BD51D0B517E0056461A /* FooterLoginView.swift in Sources */,
+				E0D5F2E61D0F02D100EEE0C2 /* FeedVC.swift in Sources */,
 				E01EC5631D0119B4009975D2 /* SignInVC.swift in Sources */,
 				E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */,
 				E01EC5611D0119B4009975D2 /* AppDelegate.swift in Sources */,
 				E050DF611D09EE140049D60C /* Constants.swift in Sources */,
+				E0D5F2E31D0F01F800EEE0C2 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
