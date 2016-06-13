@@ -1,4 +1,5 @@
 PODS:
+  - CameraManager (2.2.3)
   - Firebase (3.2.0):
     - Firebase/Core (= 3.2.0)
   - Firebase/Analytics (3.2.0):
@@ -28,11 +29,13 @@ PODS:
   - Material (1.41.2)
 
 DEPENDENCIES:
+  - CameraManager (~> 2.2)
   - Firebase
   - Firebase/Auth
   - Material (~> 1.41)
 
 SPEC CHECKSUMS:
+  CameraManager: aca6ae93237ca5f10d0f234d4cadda28caee22ca
   Firebase: 6d4012da1598732a2b43f16d8355eca90f94ed59
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseAuth: 94b851fc345ce98036dfedfdc2eddeaef8fa3b4c
@@ -43,6 +46,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Material: a695183e071df1136b6c386e482c6e4182649e26
 
-PODFILE CHECKSUM: 5c0c8ae515123da4b03780c9cfe9be1604564ac7
+PODFILE CHECKSUM: 5d00f3bd756ef79d2c7b5b68db822c722b85dd22
 
 COCOAPODS: 1.0.0

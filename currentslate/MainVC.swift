@@ -12,6 +12,8 @@ class MainVC: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    let cameraVC = CameraVC()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +49,5 @@ class MainVC: UIViewController {
         self.scrollView.contentSize = CGSizeMake(self.view.frame.width * 3, self.view.frame.size.height)
         
     }
-
-
-
+    
    }

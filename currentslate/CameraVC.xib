@@ -2,11 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraVC" customModule="currentslate" customModuleProvider="target">
             <connections>
+                <outlet property="askForPermissionsBtn" destination="jHZ-jZ-4WX" id="S04-5C-Rb9"/>
                 <outlet property="cameraView" destination="zzT-aX-l1j" id="42h-WS-8dk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,6 +21,25 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHZ-jZ-4WX">
+                    <rect key="frame" x="199" y="285" width="203" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.37714008640000002" blue="0.9528603121" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Ask For permission"/>
+                    <connections>
+                        <action selector="askForPermission:" destination="-1" eventType="touchUpInside" id="Ksv-z1-bVu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wY-de-egi">
+                    <rect key="frame" x="513" y="8" width="79" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="79" id="26z-jq-kXU"/>
+                        <constraint firstAttribute="height" constant="30" id="hwc-Ta-BNS"/>
+                    </constraints>
+                    <state key="normal" title="Switch"/>
+                    <connections>
+                        <action selector="changeCameraDevice:" destination="-1" eventType="touchUpInside" id="cWc-Px-Azk"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -28,6 +48,10 @@
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9oW-mt-LUs"/>
                 <constraint firstAttribute="bottom" secondItem="zzT-aX-l1j" secondAttribute="bottom" id="FJZ-oK-JlR"/>
                 <constraint firstAttribute="trailing" secondItem="zzT-aX-l1j" secondAttribute="trailing" id="Kkf-zb-MfT"/>
+                <constraint firstItem="5wY-de-egi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ZMr-0C-wLj"/>
+                <constraint firstItem="jHZ-jZ-4WX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aFr-aL-7h2"/>
+                <constraint firstAttribute="trailing" secondItem="5wY-de-egi" secondAttribute="trailing" constant="8" id="gGz-GV-rJc"/>
+                <constraint firstItem="jHZ-jZ-4WX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tyS-V4-Tut"/>
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="wnU-BW-qw1"/>
             </constraints>
         </view>

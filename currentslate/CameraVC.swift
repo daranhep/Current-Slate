@@ -7,72 +7,78 @@
 //
 
 import UIKit
-import AVFoundation
+import CameraManager
 
-class CameraVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraVC: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var askForPermissionsBtn: UIButton!
     
-    var captureSession : AVCaptureSession?
-    var stillImageOutput : AVCaptureStillImageOutput?
-    var previewLayer : AVCaptureVideoPreviewLayer?
+    let cameraManager = CameraManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        askForPermissionsBtn.hidden = true
+        
+        cameraManager.showAccessPermissionPopupAutomatically = false
+        let currentCameraState = cameraManager.currentCameraStatus()
+        
+        if currentCameraState == .NotDetermined {
+            askForPermissionsBtn.hidden = false
+        } else if currentCameraState == .Ready {
+            addCameraToView()
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        previewLayer?.frame = cameraView.bounds
+        cameraManager.resumeCaptureSession()
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         
-        captureSession = AVCaptureSession()
-        captureSession?.sessionPreset = AVCaptureSessionPreset1920x1080
+        cameraManager.stopCaptureSession()
         
-        let backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        var error : NSError?
-        
-        do {
-            let input = try AVCaptureDeviceInput(device: backCamera)
+    }
+    
+    
+    private func addCameraToView()
+    {
+        cameraManager.addPreviewLayerToView(cameraView, newCameraOutputMode: CameraOutputMode.VideoWithMic)
+        cameraManager.showErrorBlock = { [weak self] (erTitle: String, erMessage: String) -> Void in
             
-            if (error == nil && captureSession?.canAddInput(input) != nil) {
-                captureSession?.addInput(input)
-                
-                stillImageOutput = AVCaptureStillImageOutput()
-                stillImageOutput?.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
-                
-                if (captureSession?.canAddOutput(stillImageOutput) != nil) {
-                    captureSession?.addOutput(stillImageOutput)
-                    
-                    previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                    previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
-                    previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.Portrait
-                    cameraView.layer.addSublayer(previewLayer!)
-                    captureSession?.startRunning()
-                }
-                
-            }
+            let alertController = UIAlertController(title: erTitle, message: erMessage, preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in  }))
             
-        } catch let error as NSError  {
-            print(error)
+            self?.presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+
+    @IBAction func changeCameraDevice(sender: AnyObject) {
         
+        cameraManager.cameraDevice = cameraManager.cameraDevice == CameraDevice.Front ? CameraDevice.Back : CameraDevice.Front
+        switch (cameraManager.cameraDevice) {
+        case .Front:
+            sender.setTitle("Front", forState: UIControlState.Normal)
+        case .Back:
+            sender.setTitle("Back", forState: UIControlState.Normal)
+        }
+
         
     }
     
-
-    
+    @IBAction func askForPermission(sender: AnyObject) {
+        
+        cameraManager.askUserForCameraPermissions ({ permissionGranted in
+            self.askForPermissionsBtn.hidden = true
+            if permissionGranted {
+                self.addCameraToView()
+            }
+        })
+    }
     
 }
