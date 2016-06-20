@@ -19,6 +19,8 @@
 		E01EC56B1D0119B4009975D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01EC5691D0119B4009975D2 /* LaunchScreen.storyboard */; };
 		E01EC5771D011A2C009975D2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01EC5751D011A2C009975D2 /* FBSDKCoreKit.framework */; };
 		E01EC5781D011A2C009975D2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01EC5761D011A2C009975D2 /* FBSDKLoginKit.framework */; };
+		E05020981D188038006D9F83 /* PostVideoRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05020961D188038006D9F83 /* PostVideoRecordVC.swift */; };
+		E05020991D188038006D9F83 /* PostVideoRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05020971D188038006D9F83 /* PostVideoRecordVC.xib */; };
 		E050DF611D09EE140049D60C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DF601D09EE140049D60C /* Constants.swift */; };
 		E050DF631D09F5F60049D60C /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DF621D09F5F60049D60C /* VCExtensions.swift */; };
 		E05A9F5C1D023F4A004744CC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9F5B1D023F4A004744CC /* LoginButton.swift */; };
@@ -32,6 +34,8 @@
 		E0D5F2EF1D0F030300EEE0C2 /* DiscoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */; };
 		E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F42BD01D0B3B9B0056461A /* LoginView.swift */; };
 		E0F42BD51D0B517E0056461A /* FooterLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F42BD41D0B517E0056461A /* FooterLoginView.swift */; };
+		E0FD03921D13372700A55AE6 /* PostRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FD03901D13372700A55AE6 /* PostRecordVC.swift */; };
+		E0FD03931D13372700A55AE6 /* PostRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0FD03911D13372700A55AE6 /* PostRecordVC.xib */; };
 		EF73F9557CBBDE85B6DAFA8F /* Pods_currentslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F85BD418BD4B46EE3F1C23 /* Pods_currentslate.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,8 @@
 		E01EC56C1D0119B4009975D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01EC5751D011A2C009975D2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E01EC5761D011A2C009975D2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E05020961D188038006D9F83 /* PostVideoRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVideoRecordVC.swift; sourceTree = "<group>"; };
+		E05020971D188038006D9F83 /* PostVideoRecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostVideoRecordVC.xib; sourceTree = "<group>"; };
 		E050DF601D09EE140049D60C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E050DF621D09F5F60049D60C /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E05A9F5B1D023F4A004744CC /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -66,6 +72,8 @@
 		E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverVC.xib; sourceTree = "<group>"; };
 		E0F42BD01D0B3B9B0056461A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E0F42BD41D0B517E0056461A /* FooterLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterLoginView.swift; sourceTree = "<group>"; };
+		E0FD03901D13372700A55AE6 /* PostRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRecordVC.swift; sourceTree = "<group>"; };
+		E0FD03911D13372700A55AE6 /* PostRecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostRecordVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +218,10 @@
 				E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */,
 				E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */,
 				E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */,
+				E0FD03901D13372700A55AE6 /* PostRecordVC.swift */,
+				E0FD03911D13372700A55AE6 /* PostRecordVC.xib */,
+				E05020961D188038006D9F83 /* PostVideoRecordVC.swift */,
+				E05020971D188038006D9F83 /* PostVideoRecordVC.xib */,
 			);
 			name = "Main Application";
 			sourceTree = "<group>";
@@ -282,7 +294,9 @@
 				E012D0281D011EFD0079717F /* GoogleService-Info.plist in Resources */,
 				E01EC5681D0119B4009975D2 /* Assets.xcassets in Resources */,
 				E01EC5661D0119B4009975D2 /* Main.storyboard in Resources */,
+				E05020991D188038006D9F83 /* PostVideoRecordVC.xib in Resources */,
 				E0D5F2EF1D0F030300EEE0C2 /* DiscoverVC.xib in Resources */,
+				E0FD03931D13372700A55AE6 /* PostRecordVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +369,10 @@
 				E01EC5631D0119B4009975D2 /* SignInVC.swift in Sources */,
 				E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */,
 				E01EC5611D0119B4009975D2 /* AppDelegate.swift in Sources */,
+				E0FD03921D13372700A55AE6 /* PostRecordVC.swift in Sources */,
 				E050DF611D09EE140049D60C /* Constants.swift in Sources */,
 				E0D5F2E31D0F01F800EEE0C2 /* MainVC.swift in Sources */,
+				E05020981D188038006D9F83 /* PostVideoRecordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
