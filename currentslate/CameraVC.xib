@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraVC" customModule="currentslate" customModuleProvider="target">
             <connections>
                 <outlet property="askForPermissionsBtn" destination="jHZ-jZ-4WX" id="S04-5C-Rb9"/>
-                <outlet property="cameraButton" destination="AFh-lB-DbX" id="qO5-QN-fl6"/>
                 <outlet property="cameraView" destination="zzT-aX-l1j" id="42h-WS-8dk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,26 +32,16 @@
                         <action selector="changeCameraDevice:" destination="-1" eventType="touchUpInside" id="cWc-Px-Azk"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OV-MF-DA5">
-                    <rect key="frame" x="261" y="450" width="79" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="79" id="83V-BR-Bv4"/>
-                        <constraint firstAttribute="height" constant="30" id="omx-ot-FkO"/>
-                    </constraints>
-                    <state key="normal" title="Output"/>
-                    <connections>
-                        <action selector="outputModeButtonTapped:" destination="-1" eventType="touchUpInside" id="cMU-aH-umO"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-lB-DbX">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-lB-DbX">
                     <rect key="frame" x="261" y="488" width="79" height="30"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="X3e-Rw-N5o"/>
                         <constraint firstAttribute="width" constant="79" id="wVR-eg-gEm"/>
                     </constraints>
                     <state key="normal" title="Record"/>
                     <connections>
-                        <action selector="recordButtonTapped:" destination="-1" eventType="touchUpInside" id="CvZ-x0-UKO"/>
+                        <outletCollection property="gestureRecognizers" destination="ZHt-wY-bOl" appends="YES" id="unk-R4-9vE"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gs-OO-w6X">
@@ -78,22 +67,25 @@
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="1Gs-OO-w6X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="2LX-4m-zVj"/>
-                <constraint firstItem="AFh-lB-DbX" firstAttribute="top" secondItem="5OV-MF-DA5" secondAttribute="bottom" constant="8" id="2nl-Ab-KvX"/>
-                <constraint firstItem="5OV-MF-DA5" firstAttribute="top" secondItem="jHZ-jZ-4WX" secondAttribute="bottom" constant="135" id="3gV-ga-yLq"/>
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6U1-Q5-Ldh"/>
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Yy-H7-few"/>
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9oW-mt-LUs"/>
                 <constraint firstAttribute="bottom" secondItem="zzT-aX-l1j" secondAttribute="bottom" id="FJZ-oK-JlR"/>
                 <constraint firstAttribute="trailing" secondItem="zzT-aX-l1j" secondAttribute="trailing" id="Kkf-zb-MfT"/>
                 <constraint firstItem="1Gs-OO-w6X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="LhX-n7-dNa"/>
-                <constraint firstItem="5OV-MF-DA5" firstAttribute="centerX" secondItem="jHZ-jZ-4WX" secondAttribute="centerX" id="Y7I-qi-3So"/>
                 <constraint firstItem="5wY-de-egi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ZMr-0C-wLj"/>
                 <constraint firstItem="jHZ-jZ-4WX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aFr-aL-7h2"/>
-                <constraint firstItem="AFh-lB-DbX" firstAttribute="centerX" secondItem="5OV-MF-DA5" secondAttribute="centerX" id="eQL-au-142"/>
                 <constraint firstAttribute="trailing" secondItem="5wY-de-egi" secondAttribute="trailing" constant="8" id="gGz-GV-rJc"/>
                 <constraint firstItem="jHZ-jZ-4WX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tyS-V4-Tut"/>
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="wnU-BW-qw1"/>
             </constraints>
         </view>
+        <tapGestureRecognizer delaysTouchesBegan="YES" id="ZHt-wY-bOl">
+            <connections>
+                <action selector="tapped:" destination="-1" id="eOX-AU-cow"/>
+                <outlet property="delegate" destination="AFh-lB-DbX" id="YAe-Qv-ny4"/>
+            </connections>
+        </tapGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="hCv-xD-9QH"/>
     </objects>
 </document>

@@ -20,11 +20,6 @@ class PostVideoRecordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.avPlayer = AVPlayer(URL: url)
-//        self.avPlayerLayer = AVPlayerLayer(player: self.avPlayer)
-//        self.avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-//        self.videoView.layer.addSublayer(avPlayerLayer)
-//        self.avPlayerLayer.frame = self.videoView.bounds
     }
     
     

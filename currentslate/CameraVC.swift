@@ -13,7 +13,6 @@ class CameraVC: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var askForPermissionsBtn: UIButton!
-    @IBOutlet weak var cameraButton: UIButton!
     
     let cameraManager = CameraManager()
     
@@ -57,7 +56,7 @@ class CameraVC: UIViewController {
     
     private func addCameraToView()
     {
-        cameraManager.addPreviewLayerToView(cameraView, newCameraOutputMode: CameraOutputMode.VideoWithMic)
+        cameraManager.addPreviewLayerToView(cameraView, newCameraOutputMode: CameraOutputMode.StillImage)
         cameraManager.showErrorBlock = { [weak self] (erTitle: String, erMessage: String) -> Void in
             
             let alertController = UIAlertController(title: erTitle, message: erMessage, preferredStyle: .Alert)
@@ -85,30 +84,13 @@ class CameraVC: UIViewController {
 
     @IBAction func changeCameraDevice(sender: AnyObject) {
         
-        cameraManager.cameraDevice = cameraManager.cameraDevice == CameraDevice.Front ? CameraDevice.Back : CameraDevice.Front
-        switch (cameraManager.cameraDevice) {
-        case .Front:
-            sender.setTitle("Front", forState: UIControlState.Normal)
-        case .Back:
-            sender.setTitle("Back", forState: UIControlState.Normal)
+        if cameraManager.cameraDevice == .Front {
+            cameraManager.cameraDevice = .Back
+        } else {
+            cameraManager.cameraDevice = .Front
         }
-
-        
     }
     
-    @IBAction func outputModeButtonTapped(sender: UIButton) {
-        
-        cameraManager.cameraOutputMode = cameraManager.cameraOutputMode == CameraOutputMode.VideoWithMic ? CameraOutputMode.StillImage : CameraOutputMode.VideoWithMic
-        switch (cameraManager.cameraOutputMode) {
-        case .StillImage:
-            cameraButton.selected = false
-            cameraButton.backgroundColor = UIColor.greenColor()
-            sender.setTitle("Image", forState: UIControlState.Normal)
-        case .VideoWithMic, .VideoOnly:
-            sender.setTitle("Video", forState: UIControlState.Normal)
-            cameraButton.backgroundColor = UIColor.blueColor()
-        }
-    }
     
     
     @IBAction func recordButtonTapped(sender: UIButton) {
@@ -145,9 +127,31 @@ class CameraVC: UIViewController {
             }
         }
     }
-
-
     
+    
+
+    @IBAction func tapped(sender: UITapGestureRecognizer) {
+        
+        
+        
+            cameraManager.capturePictureWithCompletition ({ (image, error) -> Void in
+                var postRecordVC: PostRecordVC!
+                postRecordVC = PostRecordVC(nibName: "PostRecordVC", bundle: nil)
+                if let capturedImage = image {
+                    postRecordVC.image = capturedImage
+                    self.presentViewController(postRecordVC, animated: false, completion: nil)
+                }
+            })
+        
+        print("this was tapped")
+        
+    }
+
+    @IBAction func tappedLong(sender: UILongPressGestureRecognizer) {
+        
+        
+        
+    }
     @IBAction func askForPermission(sender: AnyObject) {
         
         cameraManager.askUserForCameraPermissions ({ permissionGranted in
