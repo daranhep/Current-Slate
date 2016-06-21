@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedVC" customModule="currentslate" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="G8A-q2-f6w" id="NOK-Qz-sQq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G8A-q2-f6w">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="0.58393645770000002" green="0.11853102760000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="G8A-q2-f6w" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LqU-kz-y4r"/>
+                <constraint firstItem="G8A-q2-f6w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TE9-6e-Tql"/>
+                <constraint firstAttribute="bottom" secondItem="G8A-q2-f6w" secondAttribute="bottom" id="bhW-WB-MeE"/>
+                <constraint firstItem="G8A-q2-f6w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="egG-eq-lbQ"/>
+                <constraint firstAttribute="trailing" secondItem="G8A-q2-f6w" secondAttribute="trailing" id="qve-f5-6V0"/>
+                <constraint firstItem="G8A-q2-f6w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="u1F-b3-YRi"/>
+            </constraints>
             <point key="canvasLocation" x="338" y="389"/>
         </view>
     </objects>

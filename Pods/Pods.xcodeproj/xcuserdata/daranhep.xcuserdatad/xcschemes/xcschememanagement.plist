@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DTModelStorage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DTTableViewManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,6 +47,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>54AB6FC30B67FD3F5BEB10F4BE6E8AC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5CF139B7D6298D56C0BB5770372D711F</key>
 		<dict>
 			<key>primary</key>
@@ -47,12 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AB81DEB7BE865C9DD8F89704AB3D838</key>
+		<key>85A0C7F137B7B09146EE143A28D7A815</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE0BC0486E2E5B816D84FD432C5C1CD5</key>
+		<key>B3F1AB2CEF1246B010FA583351B0DA69</key>
 		<dict>
 			<key>primary</key>
 			<true/>

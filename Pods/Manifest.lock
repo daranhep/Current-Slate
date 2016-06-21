@@ -1,5 +1,10 @@
 PODS:
   - CameraManager (2.2.3)
+  - DTModelStorage (2.6.0):
+    - DTModelStorage/Core (= 2.6.0)
+  - DTModelStorage/Core (2.6.0)
+  - DTTableViewManager (4.7.0):
+    - DTModelStorage (~> 2.6.0)
   - Firebase (3.2.0):
     - Firebase/Core (= 3.2.0)
   - Firebase/Analytics (3.2.0):
@@ -30,12 +35,15 @@ PODS:
 
 DEPENDENCIES:
   - CameraManager (~> 2.2)
+  - DTTableViewManager (~> 4.7)
   - Firebase
   - Firebase/Auth
   - Material (~> 1.41)
 
 SPEC CHECKSUMS:
   CameraManager: aca6ae93237ca5f10d0f234d4cadda28caee22ca
+  DTModelStorage: 73766a76e548f63d9cd05b8cc3e33bada192607f
+  DTTableViewManager: 4a961b5ffaa9a57387ccff7f9280d001c9c64082
   Firebase: 6d4012da1598732a2b43f16d8355eca90f94ed59
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseAuth: 94b851fc345ce98036dfedfdc2eddeaef8fa3b4c
@@ -46,6 +54,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Material: a695183e071df1136b6c386e482c6e4182649e26
 
-PODFILE CHECKSUM: 5d00f3bd756ef79d2c7b5b68db822c722b85dd22
+PODFILE CHECKSUM: fbcdb1b6978a5ca60da85ea8fd97ee2358ff8453
 
 COCOAPODS: 1.0.0

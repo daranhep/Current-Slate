@@ -21,6 +21,8 @@
 		E01EC5781D011A2C009975D2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01EC5761D011A2C009975D2 /* FBSDKLoginKit.framework */; };
 		E05020981D188038006D9F83 /* PostVideoRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05020961D188038006D9F83 /* PostVideoRecordVC.swift */; };
 		E05020991D188038006D9F83 /* PostVideoRecordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05020971D188038006D9F83 /* PostVideoRecordVC.xib */; };
+		E05020A11D19C89C006D9F83 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050209F1D19C89C006D9F83 /* PostCell.swift */; };
+		E05020A21D19C89C006D9F83 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05020A01D19C89C006D9F83 /* PostCell.xib */; };
 		E050DF611D09EE140049D60C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DF601D09EE140049D60C /* Constants.swift */; };
 		E050DF631D09F5F60049D60C /* VCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E050DF621D09F5F60049D60C /* VCExtensions.swift */; };
 		E05A9F5C1D023F4A004744CC /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9F5B1D023F4A004744CC /* LoginButton.swift */; };
@@ -59,6 +61,8 @@
 		E01EC5761D011A2C009975D2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		E05020961D188038006D9F83 /* PostVideoRecordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostVideoRecordVC.swift; sourceTree = "<group>"; };
 		E05020971D188038006D9F83 /* PostVideoRecordVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostVideoRecordVC.xib; sourceTree = "<group>"; };
+		E050209F1D19C89C006D9F83 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		E05020A01D19C89C006D9F83 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		E050DF601D09EE140049D60C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E050DF621D09F5F60049D60C /* VCExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCExtensions.swift; sourceTree = "<group>"; };
 		E05A9F5B1D023F4A004744CC /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -188,6 +192,39 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		E050209C1D19C1AA006D9F83 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */,
+				E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */,
+				E0FD03901D13372700A55AE6 /* PostRecordVC.swift */,
+				E0FD03911D13372700A55AE6 /* PostRecordVC.xib */,
+				E05020961D188038006D9F83 /* PostVideoRecordVC.swift */,
+				E05020971D188038006D9F83 /* PostVideoRecordVC.xib */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		E050209D1D19C1C6006D9F83 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */,
+				E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */,
+				E050209F1D19C89C006D9F83 /* PostCell.swift */,
+				E05020A01D19C89C006D9F83 /* PostCell.xib */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		E050209E1D19C1DA006D9F83 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */,
+				E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
 		E050DF5F1D09EE050049D60C /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,17 +248,10 @@
 		E0D5F2F11D0F03BD00EEE0C2 /* Main Application */ = {
 			isa = PBXGroup;
 			children = (
+				E050209E1D19C1DA006D9F83 /* Discover */,
+				E050209D1D19C1C6006D9F83 /* Feed */,
+				E050209C1D19C1AA006D9F83 /* Camera */,
 				E0D5F2E21D0F01F800EEE0C2 /* MainVC.swift */,
-				E0D5F2E41D0F02D100EEE0C2 /* FeedVC.swift */,
-				E0D5F2E51D0F02D100EEE0C2 /* FeedVC.xib */,
-				E0D5F2E81D0F02F100EEE0C2 /* CameraVC.swift */,
-				E0D5F2E91D0F02F100EEE0C2 /* CameraVC.xib */,
-				E0D5F2EC1D0F030300EEE0C2 /* DiscoverVC.swift */,
-				E0D5F2ED1D0F030300EEE0C2 /* DiscoverVC.xib */,
-				E0FD03901D13372700A55AE6 /* PostRecordVC.swift */,
-				E0FD03911D13372700A55AE6 /* PostRecordVC.xib */,
-				E05020961D188038006D9F83 /* PostVideoRecordVC.swift */,
-				E05020971D188038006D9F83 /* PostVideoRecordVC.xib */,
 			);
 			name = "Main Application";
 			sourceTree = "<group>";
@@ -295,6 +325,7 @@
 				E01EC5681D0119B4009975D2 /* Assets.xcassets in Resources */,
 				E01EC5661D0119B4009975D2 /* Main.storyboard in Resources */,
 				E05020991D188038006D9F83 /* PostVideoRecordVC.xib in Resources */,
+				E05020A21D19C89C006D9F83 /* PostCell.xib in Resources */,
 				E0D5F2EF1D0F030300EEE0C2 /* DiscoverVC.xib in Resources */,
 				E0FD03931D13372700A55AE6 /* PostRecordVC.xib in Resources */,
 			);
@@ -367,6 +398,7 @@
 				E0F42BD51D0B517E0056461A /* FooterLoginView.swift in Sources */,
 				E0D5F2E61D0F02D100EEE0C2 /* FeedVC.swift in Sources */,
 				E01EC5631D0119B4009975D2 /* SignInVC.swift in Sources */,
+				E05020A11D19C89C006D9F83 /* PostCell.swift in Sources */,
 				E0F42BD11D0B3B9B0056461A /* LoginView.swift in Sources */,
 				E01EC5611D0119B4009975D2 /* AppDelegate.swift in Sources */,
 				E0FD03921D13372700A55AE6 /* PostRecordVC.swift in Sources */,
