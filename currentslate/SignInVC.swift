@@ -21,7 +21,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         
         self.hideKeyboardWhenTappedAround()
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
