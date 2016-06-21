@@ -26,7 +26,7 @@ class PostRecordVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
         if let validImage = self.image {
             self.imageView.image = validImage
         }
