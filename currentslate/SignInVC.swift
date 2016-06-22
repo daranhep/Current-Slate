@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 import FBSDKLoginKit
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,11 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        if FIRAuth.auth()?.currentUser != nil {
+            performSegueWithIdentifier("SignedIn", sender: nil)
+        }
         
+        ref = FIRDatabase.database().reference()
         
     }
 
@@ -87,6 +91,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     } else {
                         
                         print("you have authenticated with facebook \(user)")
+                        if let user = FIRAuth.auth()?.currentUser {
+                            self.signedIn(user)
+                        }
                     }
                     
                     
@@ -96,10 +103,10 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func signedIn(user: FIRUser) {
-        
-        
+    func signedIn (user: FIRUser){
+        performSegueWithIdentifier("SignedIn", sender: nil)
     }
+    
     
     func showErrorAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)

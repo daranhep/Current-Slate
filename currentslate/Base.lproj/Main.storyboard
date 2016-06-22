@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IQM-xl-kce">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,7 +8,7 @@
         <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="currentslate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignedInMain" id="BYZ-38-t0r" customClass="SignInVC" customModule="currentslate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -119,6 +119,9 @@
                                         <exclude reference="8Vt-bS-ESX"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="fbLoginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KYx-cV-GIQ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="center" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-SU-i2y">
                                 <rect key="frame" x="43" y="453" width="514" height="40"/>
@@ -213,11 +216,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="yrO-b3-Zte" id="5jn-t3-vMm"/>
                         <outlet property="passwordTextField" destination="AZW-T6-jwu" id="3pl-pS-wue"/>
+                        <segue destination="IQM-xl-kce" kind="presentation" identifier="SignedIn" id="Wjp-Jr-lFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1001" y="-543"/>
+            <point key="canvasLocation" x="-1058" y="-502"/>
         </scene>
         <!--Register OptionsVC-->
         <scene sceneID="37h-pB-iyc">
@@ -426,7 +430,7 @@
         <!--MainVC-->
         <scene sceneID="bv4-Iy-r53">
             <objects>
-                <viewController id="IQM-xl-kce" customClass="MainVC" customModule="currentslate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignedIn" id="IQM-xl-kce" customClass="MainVC" customModule="currentslate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xdK-II-5po"/>
                         <viewControllerLayoutGuide type="bottom" id="Rar-ph-bhe"/>
@@ -567,6 +571,7 @@
                                 <connections>
                                     <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVd-kB-bYh"/>
                                     <action selector="nextBtnPressed:" destination="vvP-FZ-hYN" eventType="touchUpInside" id="yrD-pC-9cT"/>
+                                    <segue destination="IQM-xl-kce" kind="presentation" identifier="SignedInFromReg" id="YqJ-FG-Ku8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -598,5 +603,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kPX-25-n5q"/>
+        <segue reference="YqJ-FG-Ku8"/>
     </inferredMetricsTieBreakers>
 </document>

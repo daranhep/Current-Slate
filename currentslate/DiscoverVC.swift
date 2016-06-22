@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class DiscoverVC: UIViewController {
+    
+    var storyBoard: UIStoryboard?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,14 @@ class DiscoverVC: UIViewController {
     }
 
 
+    @IBAction func signOut(sender: AnyObject) {
+        try! FIRAuth.auth()!.signOut()
+        print("You have signed out")
+        storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard?.instantiateViewControllerWithIdentifier("SignedInMain")
+        self.presentViewController(vc!, animated: true, completion: nil)
+        
+    }
     
 
 }
