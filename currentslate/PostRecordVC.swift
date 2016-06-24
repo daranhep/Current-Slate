@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 class PostRecordVC: UIViewController {
     
     var cameraVC: CameraVC!
     var image: UIImage?
+    var storageRef: FIRStorageReference!
+    var imageData: NSData?
     
     @IBOutlet weak var imageView: UIImageView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nil)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,10 +30,17 @@ class PostRecordVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        storageRef = FIRStorage.storage().reference()
+        
         self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        if let validImage = self.image {
-            self.imageView.image = validImage
+        
+        if let validImage2 = self.imageData {
+            image = UIImage(data: validImage2)
+            self.imageView.image = image
+            
         }
+        
     }
     
 
@@ -39,4 +50,9 @@ class PostRecordVC: UIViewController {
         
     }
     
+//    @IBAction func postImage(sender: AnyObject) {
+//        
+//        
+//        
+//    }
 }

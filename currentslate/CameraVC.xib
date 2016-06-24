@@ -32,7 +32,7 @@
                         <action selector="changeCameraDevice:" destination="-1" eventType="touchUpInside" id="cWc-Px-Azk"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-lB-DbX">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFh-lB-DbX">
                     <rect key="frame" x="261" y="488" width="79" height="30"/>
                     <gestureRecognizers/>
                     <constraints>
@@ -76,9 +76,12 @@
                 <constraint firstItem="5wY-de-egi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ZMr-0C-wLj"/>
                 <constraint firstItem="jHZ-jZ-4WX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aFr-aL-7h2"/>
                 <constraint firstAttribute="trailing" secondItem="5wY-de-egi" secondAttribute="trailing" constant="8" id="gGz-GV-rJc"/>
+                <constraint firstItem="AFh-lB-DbX" firstAttribute="centerX" secondItem="zzT-aX-l1j" secondAttribute="centerX" id="oCr-Dp-0vS"/>
                 <constraint firstItem="jHZ-jZ-4WX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tyS-V4-Tut"/>
                 <constraint firstItem="zzT-aX-l1j" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="wnU-BW-qw1"/>
+                <constraint firstAttribute="bottom" secondItem="AFh-lB-DbX" secondAttribute="bottom" constant="82" id="zdi-aG-Ceg"/>
             </constraints>
+            <point key="canvasLocation" x="64" y="407"/>
         </view>
         <tapGestureRecognizer delaysTouchesBegan="YES" id="ZHt-wY-bOl">
             <connections>

@@ -97,15 +97,16 @@ class CameraVC: UIViewController {
         
         switch (cameraManager.cameraOutputMode) {
         case .StillImage:
-            cameraManager.capturePictureWithCompletition({ (image, error) -> Void in
+            cameraManager.capturePictureDataWithCompletition({ (imageData, error) in
                 var postRecordVC: PostRecordVC!
                 postRecordVC = PostRecordVC(nibName: "PostRecordVC", bundle: nil)
-                    if let capturedImage = image {
-                        postRecordVC.image = capturedImage
-                        self.presentViewController(postRecordVC, animated: false, completion: nil)
-                    }
-                
+                if let capturedImage = imageData {
+                    print("The captured image is \(capturedImage.description)")
+                    postRecordVC.imageData = capturedImage
+                    self.presentViewController(postRecordVC, animated: false, completion: nil)
+                }
             })
+            
         case .VideoWithMic, .VideoOnly:
             sender.selected = !sender.selected
             sender.setTitle(" ", forState: UIControlState.Selected)
@@ -132,16 +133,14 @@ class CameraVC: UIViewController {
 
     @IBAction func tapped(sender: UITapGestureRecognizer) {
         
-        
-        
-            cameraManager.capturePictureWithCompletition ({ (image, error) -> Void in
-                var postRecordVC: PostRecordVC!
-                postRecordVC = PostRecordVC(nibName: "PostRecordVC", bundle: nil)
-                if let capturedImage = image {
-                    postRecordVC.image = capturedImage
-                    self.presentViewController(postRecordVC, animated: false, completion: nil)
-                }
-            })
+        cameraManager.capturePictureDataWithCompletition({ (imageData, error) in
+            var postRecordVC: PostRecordVC!
+            postRecordVC = PostRecordVC(nibName: "PostRecordVC", bundle: nil)
+            if let capturedImage = imageData {
+                postRecordVC.imageData = capturedImage
+                self.presentViewController(postRecordVC, animated: false, completion: nil)
+            }
+        })
         
         print("this was tapped")
         

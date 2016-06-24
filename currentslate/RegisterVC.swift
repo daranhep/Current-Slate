@@ -60,9 +60,13 @@ class RegisterVC: UIViewController {
             showErrorAlert("Required Field", msg: "Please enter all the required fields")
         }
     }
+    
+    
     func signedIn (user: FIRUser){
         performSegueWithIdentifier("SignedIn", sender: nil)
     }
+    
+    
     
     func showErrorAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
