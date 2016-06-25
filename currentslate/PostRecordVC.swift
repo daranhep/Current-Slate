@@ -14,7 +14,8 @@ class PostRecordVC: UIViewController {
     var cameraVC: CameraVC!
     var image: UIImage?
     var storageRef: FIRStorageReference!
-    var imageData: NSData?
+    var databaseRef: FIRDatabaseReference!
+    var imageData: NSData!
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -31,7 +32,8 @@ class PostRecordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storageRef = FIRStorage.storage().reference()
+        self.storageRef = FIRStorage.storage().reference()
+        self.databaseRef = FIRDatabase.database().reference()
         
         self.imageView.contentMode = UIViewContentMode.ScaleAspectFill
         
@@ -50,9 +52,61 @@ class PostRecordVC: UIViewController {
         
     }
     
-//    @IBAction func postImage(sender: AnyObject) {
-//        
-//        
-//        
-//    }
+    @IBAction func postImage(sender: AnyObject) {
+        
+        let key = databaseRef.child("posts").childByAutoId().key
+        
+        // Post Data Upload
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        databaseRef.child("users").child(userID!).observeSingleEventOfType(FIRDataEventType.Value, withBlock: { (snapshot: FIRDataSnapshot) in
+            
+            let username = snapshot.value!["username"] as! String
+            let user = User.init(username: username)
+            
+            self.postImageInfo(userID!, username: user.username, key: key)
+        })
+        
+        
+        // Image upload ++ Make function for image post to database
+        let imagePath = FIRAuth.auth()!.currentUser!.uid +
+            "/\(key).jpg"
+        let data = imageData
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        self.storageRef.child(imagePath).putData(data, metadata: metadata) { (metadata, error) in
+            
+            if let error = error {
+                print(error)
+            } else {
+                print("successfullyUploaded")
+            }
+        
+        }
+        
+    }
+    
+    func postImageInfo(userID: String, username: String, key: String) {
+        
+        let storageRef = "gs://current-slate.appspot.com/\(userID)/\(key).jpeg"
+        
+        let post = ["uid": userID,
+                    "username": username,
+                    "imageURL": storageRef
+                    ]
+        
+        let childUpdates = ["/posts/\(key)": post,
+                            "/user-posts/\(userID)/\(key)/": post]
+        
+        databaseRef.updateChildValues(childUpdates)
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
 }

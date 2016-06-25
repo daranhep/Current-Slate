@@ -9,8 +9,9 @@
 import UIKit
 import DTTableViewManager
 import DTModelStorage
+import Firebase
 
-class FeedVC: UIViewController, DTTableViewManageable {
+class FeedVC: UIViewController, DTTableViewManageable, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +23,7 @@ class FeedVC: UIViewController, DTTableViewManageable {
         
         let foo = ["Custom cell", "Custom cell 2"]
         manager.memoryStorage.addItems(foo)
+        
     }
 
 
