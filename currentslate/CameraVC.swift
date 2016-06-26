@@ -26,7 +26,7 @@ class CameraVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("printing from cameraview")
         askForPermissionsBtn.hidden = true
         
         cameraManager.showAccessPermissionPopupAutomatically = false
@@ -50,6 +50,7 @@ class CameraVC: UIViewController {
         super.viewWillDisappear(animated)
         
         cameraManager.stopCaptureSession()
+        print("left the view")
         
     }
     

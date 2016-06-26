@@ -13,8 +13,9 @@ import DTModelStorage
 class PostCell: UITableViewCell, ModelTransfer {
     
     @IBOutlet weak var label: UILabel!
-    func updateWithModel(model: String) {
-        self.label.text = model
+    func updateWithModel(model: Post) {
+        
+        self.label.text = model.username
     }
     
 }

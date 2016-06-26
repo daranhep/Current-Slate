@@ -15,15 +15,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqi-L7-Njk">
-                        <rect key="frame" x="192" y="89" width="42" height="21"/>
+                        <rect key="frame" x="8" y="8" width="411" height="183.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="411" id="KoK-zQ-6WV"/>
+                            <constraint firstAttribute="height" constant="183.5" id="WQH-Ch-Pth"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.34080323870000001" green="0.63742505419999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="Mqi-L7-Njk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5Jq-jN-BtM"/>
-                    <constraint firstItem="Mqi-L7-Njk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="adc-LX-bCO"/>
+                    <constraint firstItem="Mqi-L7-Njk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BxA-Pw-w0E"/>
+                    <constraint firstItem="Mqi-L7-Njk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fn0-n6-Fae"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
