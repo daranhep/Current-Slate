@@ -13,7 +13,7 @@ class DiscoverVC: UIViewController {
     
     var storyBoard: UIStoryboard?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()

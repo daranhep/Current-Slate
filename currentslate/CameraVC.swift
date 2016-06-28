@@ -24,6 +24,7 @@ class CameraVC: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("printing from cameraview")
@@ -43,17 +44,17 @@ class CameraVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         cameraManager.resumeCaptureSession()
+        print("blah")
         
     }
+    
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        cameraManager.stopCaptureSession()
-        print("left the view")
+        self.cameraManager.stopCaptureSession()
         
     }
-    
     
     private func addCameraToView()
     {

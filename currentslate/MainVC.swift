@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -35,6 +35,7 @@ class MainVC: UIViewController {
         self.addChildViewController(discoverVC)
         self.scrollView.addSubview(discoverVC.view)
         discoverVC.didMoveToParentViewController(self)
+        
         
         
         //Setting up the frame
