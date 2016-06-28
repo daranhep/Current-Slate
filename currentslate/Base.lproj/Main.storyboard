@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yGE-5b-MC6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -216,7 +216,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="yrO-b3-Zte" id="5jn-t3-vMm"/>
                         <outlet property="passwordTextField" destination="AZW-T6-jwu" id="3pl-pS-wue"/>
-                        <segue destination="IQM-xl-kce" kind="presentation" identifier="SignedIn" id="Wjp-Jr-lFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -427,37 +426,31 @@
             </objects>
             <point key="canvasLocation" x="-383" y="-543"/>
         </scene>
-        <!--MainVC-->
-        <scene sceneID="bv4-Iy-r53">
+        <!--Page View Controller-->
+        <scene sceneID="8rp-z6-Y6f">
             <objects>
-                <viewController storyboardIdentifier="SignedIn" id="IQM-xl-kce" customClass="MainVC" customModule="currentslate" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="yGE-5b-MC6" customClass="PageViewController" customModule="currentslate" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEG-BT-5ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-404" y="131"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="m9N-Q1-7Ca">
+            <objects>
+                <viewController storyboardIdentifier="FeedVC" id="fEA-Dc-Xhc" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xdK-II-5po"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rar-ph-bhe"/>
+                        <viewControllerLayoutGuide type="top" id="mm8-dD-cNe"/>
+                        <viewControllerLayoutGuide type="bottom" id="wEi-t9-PaR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t4L-Fd-cDP">
+                    <view key="view" contentMode="scaleToFill" id="hpE-as-GeE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPi-VF-mAu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pPi-VF-mAu" firstAttribute="width" secondItem="t4L-Fd-cDP" secondAttribute="width" id="8Ub-0U-HV7"/>
-                            <constraint firstItem="pPi-VF-mAu" firstAttribute="height" secondItem="t4L-Fd-cDP" secondAttribute="height" id="Jn8-nf-i9Q"/>
-                            <constraint firstItem="pPi-VF-mAu" firstAttribute="centerX" secondItem="t4L-Fd-cDP" secondAttribute="centerX" id="Sfy-7n-nF6"/>
-                            <constraint firstItem="pPi-VF-mAu" firstAttribute="centerY" secondItem="t4L-Fd-cDP" secondAttribute="centerY" id="YiD-AT-VHA"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.14668916339999999" green="1" blue="0.36081851009999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="pPi-VF-mAu" id="Yz2-Vr-ofC"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bQn-D7-28q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYU-xB-lw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383" y="218"/>
+            <point key="canvasLocation" x="-1115" y="791"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="kJS-d7-qsD">
@@ -571,7 +564,6 @@
                                 <connections>
                                     <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVd-kB-bYh"/>
                                     <action selector="nextBtnPressed:" destination="vvP-FZ-hYN" eventType="touchUpInside" id="yrD-pC-9cT"/>
-                                    <segue destination="IQM-xl-kce" kind="presentation" identifier="SignedInFromReg" id="YqJ-FG-Ku8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -600,9 +592,44 @@
             </objects>
             <point key="canvasLocation" x="259" y="-543"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Osg-kg-Zmv">
+            <objects>
+                <viewController storyboardIdentifier="CameraVC" id="VTd-TY-Gr1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tVI-5B-JkI"/>
+                        <viewControllerLayoutGuide type="bottom" id="L4I-1g-R6w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFl-ZP-hKW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.30956994459999998" blue="0.88717592109999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lv-fM-dBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-427" y="791"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8RB-vf-TuE">
+            <objects>
+                <viewController storyboardIdentifier="DiscoveryVC" id="VcJ-DM-zBK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RC5-U4-BCU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wpb-yh-Sk9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SdD-6k-eu4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbO-pJ-pXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="791"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kPX-25-n5q"/>
-        <segue reference="YqJ-FG-Ku8"/>
     </inferredMetricsTieBreakers>
 </document>
