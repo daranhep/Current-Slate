@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import FirebaseDatabase
+import FirebaseStorage
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 

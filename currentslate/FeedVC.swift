@@ -10,6 +10,8 @@ import UIKit
 import DTTableViewManager
 import DTModelStorage
 import Firebase
+import FirebaseStorage
+import FirebaseDatabase
 
 class FeedVC: UIViewController, DTTableViewManageable, UITableViewDelegate {
 
