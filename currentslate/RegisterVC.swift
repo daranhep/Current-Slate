@@ -7,25 +7,24 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class RegisterVC: UIViewController {
 
     @IBOutlet weak var emailTextField: LoginTextField!
     @IBOutlet weak var usernameTextField: LoginTextField!
     @IBOutlet weak var pwdTextField: LoginTextField!
-    
+    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.hideKeyboardWhenTappedAround()
-    }
+        
+        ref = FIRDatabase.database().reference()
+        
+        }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func nextBtnPressed(sender: AnyObject) {
         
@@ -45,12 +44,29 @@ class RegisterVC: UIViewController {
                     
                 } else {
                     print("User created and You are logged in")
+                    let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+                    changeRequest?.displayName = username
+                    changeRequest?.commitChangesWithCompletion({ (error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            self.ref.child("users").child(user!.uid).setValue(["username": username])
+                            self.performSegueWithIdentifier("SignedInFromReg", sender: nil)
+                        }
+                    })
                 }
             })
         } else {
             showErrorAlert("Required Field", msg: "Please enter all the required fields")
         }
     }
+    
+    
+    func signedIn (user: FIRUser){
+        performSegueWithIdentifier("SignedIn", sender: nil)
+    }
+    
+    
     
     func showErrorAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .Alert)

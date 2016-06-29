@@ -8,7 +8,10 @@ target 'currentslate' do
   # Pods for currentslate
 	pod 'Firebase'
 	pod ‘Firebase/Auth’
+	pod 'Firebase/Storage'
+	pod ‘Firebase/Database’
 	pod 'Material', '~> 1.41'
 	pod 'CameraManager', '~> 2.2'
-
+	pod 'DTTableViewManager', '~> 4.7'
+	pod 'Google-Material-Design-Icons-Swift', '~> 1.0.1'
 end

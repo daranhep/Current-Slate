@@ -8,24 +8,32 @@
 
 import UIKit
 import CameraManager
+import Google_Material_Design_Icons_Swift
+import Material
 
 class CameraVC: UIViewController {
 
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var askForPermissionsBtn: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var cameraBack: UIButton!
     
     let cameraManager = CameraManager()
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nil)
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let recordImage = UIImage(named: "ic_fiber_manual_record_48pt_2x")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        let cameraImage = UIImage(named: "camera_back")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        cameraBack.setImage(cameraImage, forState: .Normal)
+        
+        recordButton.tintColor = MaterialColor.white
+        recordButton.setImage(recordImage, forState: .Normal)
         
         askForPermissionsBtn.hidden = true
         
@@ -38,21 +46,24 @@ class CameraVC: UIViewController {
             addCameraToView()
         }
         
+        prefersStatusBarHidden()
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         cameraManager.resumeCaptureSession()
+        print("blah")
         
     }
+    
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        cameraManager.stopCaptureSession()
+        self.cameraManager.stopCaptureSession()
         
     }
-    
     
     private func addCameraToView()
     {
@@ -82,7 +93,7 @@ class CameraVC: UIViewController {
     }
 
 
-    @IBAction func changeCameraDevice(sender: AnyObject) {
+    @IBAction func changeCameraDevice(sender: UIButton) {
         
         if cameraManager.cameraDevice == .Front {
             cameraManager.cameraDevice = .Back
@@ -97,15 +108,16 @@ class CameraVC: UIViewController {
         
         switch (cameraManager.cameraOutputMode) {
         case .StillImage:
-            cameraManager.capturePictureWithCompletition({ (image, error) -> Void in
+            cameraManager.capturePictureDataWithCompletition({ (imageData, error) in
                 var postRecordVC: PostRecordVC!
                 postRecordVC = PostRecordVC(nibName: "PostRecordVC", bundle: nil)
-                    if let capturedImage = image {
-                        postRecordVC.image = capturedImage
-                        self.presentViewController(postRecordVC, animated: false, completion: nil)
-                    }
-                
+                if let capturedImage = imageData {
+                    print("The captured image is \(capturedImage.description)")
+                    postRecordVC.imageData = capturedImage
+                    self.presentViewController(postRecordVC, animated: false, completion: nil)
+                }
             })
+            
         case .VideoWithMic, .VideoOnly:
             sender.selected = !sender.selected
             sender.setTitle(" ", forState: UIControlState.Selected)
@@ -132,16 +144,16 @@ class CameraVC: UIViewController {
 
     @IBAction func tapped(sender: UITapGestureRecognizer) {
         
-        
-        
-            cameraManager.capturePictureWithCompletition ({ (image, error) -> Void in
-                var postRecordVC: PostRecordVC!
-                postRecordVC = PostRecordVC(nibName: "PostRecordVC", bundle: nil)
-                if let capturedImage = image {
-                    postRecordVC.image = capturedImage
-                    self.presentViewController(postRecordVC, animated: false, completion: nil)
+        cameraManager.capturePictureDataWithCompletition({ (imageData, error) in
+            let vc: PostRecordVC? = self.storyboard?.instantiateViewControllerWithIdentifier("PostRecordVC") as? PostRecordVC
+            if let validVC: PostRecordVC = vc {
+                if let capturedImage = imageData {
+                    validVC.imageData = capturedImage
+                    self.presentViewController(validVC, animated: false, completion: nil)
                 }
-            })
+            }
+            
+        })
         
         print("this was tapped")
         

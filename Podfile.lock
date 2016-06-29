@@ -1,5 +1,10 @@
 PODS:
   - CameraManager (2.2.3)
+  - DTModelStorage (2.6.0):
+    - DTModelStorage/Core (= 2.6.0)
+  - DTModelStorage/Core (2.6.0)
+  - DTTableViewManager (4.7.0):
+    - DTModelStorage (~> 2.6.0)
   - Firebase (3.2.0):
     - Firebase/Core (= 3.2.0)
   - Firebase/Analytics (3.2.0):
@@ -9,6 +14,12 @@ PODS:
     - FirebaseAuth (= 3.0.2)
   - Firebase/Core (3.2.0):
     - Firebase/Analytics (= 3.2.0)
+  - Firebase/Database (3.2.0):
+    - Firebase/Analytics (= 3.2.0)
+    - FirebaseDatabase (= 3.0.1)
+  - Firebase/Storage (3.2.0):
+    - Firebase/Analytics (= 3.2.0)
+    - FirebaseStorage (= 1.0.1)
   - FirebaseAnalytics (3.2.0):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -18,7 +29,13 @@ PODS:
     - FirebaseAnalytics (~> 3.2)
     - GoogleNetworkingUtilities (~> 1.2)
     - GoogleUtilities (~> 1.3)
+  - FirebaseDatabase (3.0.1):
+    - FirebaseAnalytics (~> 3.2)
   - FirebaseInstanceID (1.0.6)
+  - FirebaseStorage (1.0.1):
+    - FirebaseAnalytics (~> 3.2)
+    - GoogleNetworkingUtilities (~> 1.2)
+  - Google-Material-Design-Icons-Swift (1.0.1)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleNetworkingUtilities (1.2.1):
@@ -30,22 +47,31 @@ PODS:
 
 DEPENDENCIES:
   - CameraManager (~> 2.2)
+  - DTTableViewManager (~> 4.7)
   - Firebase
   - Firebase/Auth
+  - Firebase/Database
+  - Firebase/Storage
+  - Google-Material-Design-Icons-Swift (~> 1.0.1)
   - Material (~> 1.41)
 
 SPEC CHECKSUMS:
   CameraManager: aca6ae93237ca5f10d0f234d4cadda28caee22ca
+  DTModelStorage: 73766a76e548f63d9cd05b8cc3e33bada192607f
+  DTTableViewManager: 4a961b5ffaa9a57387ccff7f9280d001c9c64082
   Firebase: 6d4012da1598732a2b43f16d8355eca90f94ed59
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseAuth: 94b851fc345ce98036dfedfdc2eddeaef8fa3b4c
+  FirebaseDatabase: 34301d11621a83546f39f670d256477ba6f7fcea
   FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
+  FirebaseStorage: e9c32a8d246c07eeefd78180c22736aa1b81e81b
+  Google-Material-Design-Icons-Swift: ff587db57d713061f66b8457229d1af2cae84c56
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Material: a695183e071df1136b6c386e482c6e4182649e26
 
-PODFILE CHECKSUM: 5d00f3bd756ef79d2c7b5b68db822c722b85dd22
+PODFILE CHECKSUM: ca9f5953f40b54c9ac1a531b55ad2cffaa42563e
 
 COCOAPODS: 1.0.0
