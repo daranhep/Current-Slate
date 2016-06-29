@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF7B152AE1CDC0A86621EB96E41BB608"
-               BuildableName = "Pods_currentslate.framework"
-               BlueprintName = "Pods-currentslate"
+               BlueprintIdentifier = "91C9E922D1EA73A036F3508244DF37AC"
+               BuildableName = "Google_Material_Design_Icons_Swift.framework"
+               BlueprintName = "Google-Material-Design-Icons-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF7B152AE1CDC0A86621EB96E41BB608"
-            BuildableName = "Pods_currentslate.framework"
-            BlueprintName = "Pods-currentslate"
+            BlueprintIdentifier = "91C9E922D1EA73A036F3508244DF37AC"
+            BuildableName = "Google_Material_Design_Icons_Swift.framework"
+            BlueprintName = "Google-Material-Design-Icons-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

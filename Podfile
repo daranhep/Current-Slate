@@ -13,4 +13,5 @@ target 'currentslate' do
 	pod 'Material', '~> 1.41'
 	pod 'CameraManager', '~> 2.2'
 	pod 'DTTableViewManager', '~> 4.7'
+	pod 'Google-Material-Design-Icons-Swift', '~> 1.0.1'
 end

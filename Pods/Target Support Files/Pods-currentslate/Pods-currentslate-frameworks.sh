@@ -87,11 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CameraManager/CameraManager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DTModelStorage/DTModelStorage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DTTableViewManager/DTTableViewManager.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Google-Material-Design-Icons-Swift/Google_Material_Design_Icons_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CameraManager/CameraManager.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DTModelStorage/DTModelStorage.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DTTableViewManager/DTTableViewManager.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Google-Material-Design-Icons-Swift/Google_Material_Design_Icons_Swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
 fi

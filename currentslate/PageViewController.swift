@@ -16,6 +16,10 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
                 self.newPageViewController("Discovery")]
     }()
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

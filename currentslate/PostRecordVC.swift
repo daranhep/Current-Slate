@@ -17,6 +17,10 @@ class PostRecordVC: UIViewController {
     var databaseRef: FIRDatabaseReference!
     var imageData: NSData!
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -47,9 +51,11 @@ class PostRecordVC: UIViewController {
     
 
     @IBAction func cancelBtnPressed(sender: AnyObject) {
-        cameraVC = CameraVC(nibName: "CameraVC", bundle: nil)
-        self.presentViewController(cameraVC, animated: true, completion: nil)
-        
+        let vc: CameraVC? = self.storyboard?.instantiateViewControllerWithIdentifier("CameraVC") as? CameraVC
+        if let validVC: CameraVC = vc {
+            self.presentViewController(validVC, animated: false, completion: nil)
+            
+        }
     }
     
     @IBAction func postImage(sender: AnyObject) {
